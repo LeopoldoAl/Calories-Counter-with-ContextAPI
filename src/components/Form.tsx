@@ -57,7 +57,7 @@ export default function Form({dispatch, state} : FormProps) {
       onSubmit={handleSubmit}
     >
       <div className="grid grid-cols-1 gap-3">
-          <label htmlFor="category" className="font-bold">Categoría:</label>
+          <label htmlFor="category" className="font-bold">Category:</label>
           <select
             className="border border-slate-300 p-2 rounded-lg w-full bg-white"
             id="category"
@@ -76,33 +76,34 @@ export default function Form({dispatch, state} : FormProps) {
       </div>
 
       <div className="grid grid-cols-1 gap-3">
-          <label htmlFor="name" className="font-bold">Actividad:</label>
+          <label htmlFor="name" className="font-bold">Activity:</label>
           <input
             id="name"
             type="text"
             className="border border-slate-300 p-2 rounded-lg"
-            placeholder="Ej. Comida, Jugo de Naranja, Ensalada, Ejercicio, Pesas, Bicicleta"
+            placeholder="Ex. Food, Orange juice, Salad, Exercise, Lifting, Bicycle"
             value={activity.name}
             onChange={handleChange}
           />
       </div>
 
       <div className="grid grid-cols-1 gap-3">
-          <label htmlFor="calories" className="font-bold">Calorias:</label>
+          <label htmlFor="calories" className="font-bold">Calories:</label>
           <input
             id="calories"
             type="number"
             className="border border-slate-300 p-2 rounded-lg"
-            placeholder="Calorias. ej. 300 o 500"
+            placeholder="Calories. ej. 300 o 500"
             value={activity.calories}
             onChange={handleChange}
+            min={'0'}
           />
       </div>
 
       <input
         type="submit"
         className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold uppercase text-white cursor-pointer disabled:opacity-10"
-        value={activity.category === 1 ? 'Guardar Comida' : 'Guardar Ejercicio'}
+        value={activity.category === 1 ? 'Save Food' : 'Save Exercise'}
         disabled={!isValidActivity()}
       />
 
